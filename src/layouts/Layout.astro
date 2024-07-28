@@ -1,0 +1,26 @@
+---
+import type Lang from '../interfaces/lang';
+
+interface Props {
+	title: string;
+	lang: Lang;
+}
+
+const { title } = Astro.props;
+const {lang} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Tao Mod Manager it's a Desktop App for importing Genshin Impact Models easily" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/icon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
