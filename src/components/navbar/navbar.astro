@@ -1,0 +1,19 @@
+---
+import langs from "../../../lang/langs";
+
+let { lang } = Astro.params;
+---
+
+<div class="bg-dark h-24 px-12 flex justify-between items-center">
+    <div class="h-full flex justify-center items-center">
+        <img src="/icon.png" class="h-full" alt="" />
+        <h1 class="text-light text-3xl font-yeon">Tao Mod Manager</h1>
+    </div>
+    <select>
+        {
+            Object.entries(langs).map(([key, value]) => (
+                <option value={key} selected={key === lang}>{value}</option>
+            ))
+        }
+    </select>
+</div>

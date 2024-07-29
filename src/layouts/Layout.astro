@@ -1,26 +1,75 @@
 ---
-import type Lang from '../interfaces/lang';
+import Navbar from "../components/navbar/navbar.astro";
 
 interface Props {
 	title: string;
-	lang: Lang;
 }
 
 const { title } = Astro.props;
-const {lang} = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Tao Mod Manager it's a Desktop App for importing Genshin Impact Models easily" />
+		<meta
+			name="description"
+			content="Tao Mod Manager it's a Desktop App for importing Genshin Impact Models easily"
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/icon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-light">
+		<Navbar />
 		<slot />
 	</body>
 </html>
+
+<style is:global>
+	@font-face {
+		font-family: "ABeeZee";
+		src: url("/assets/fonts/ABeeZee-Italic.ttf");
+		font-weight: 400;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "ABeeZee";
+		src: url("/assets/fonts/ABeeZee-Regular.ttf");
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Yeon Sung";
+		src: url("/assets/fonts/YeonSung-Regular.ttf") format("truetype");
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	/* width */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: #16161a;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: #20242b;
+		transition: all 1s;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: #bf0020;
+	}
+</style>
