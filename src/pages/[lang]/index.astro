@@ -1,15 +1,12 @@
 ---
-import Navbar from "../../components/navbar/navbar.astro";
+import { langStaticPaths } from "../../../lang";
 import Layout from "../../layouts/Layout.astro";
-import getTranslation from "../../modules/getTranslation";
 
 export function getStaticPaths() {
-    return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
+    return langStaticPaths;
 }
 
 let { lang } = Astro.params;
 ---
 
-<Layout title="Tao Mod Manager">
-    
-</Layout>
+<Layout title="Tao Mod Manager" />
