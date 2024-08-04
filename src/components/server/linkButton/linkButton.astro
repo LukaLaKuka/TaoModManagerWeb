@@ -1,0 +1,14 @@
+---
+interface Props {
+    href: string;
+    download?: boolean;
+    className?: string;
+    target?: "_blank" | "_parent" | "_self" | "_top";
+}
+
+const { href, download, className, target } = Astro.props;
+---
+
+<a href={href} target={target != "_self" ? target : "_self"} download={download} class={className} >
+    <slot />
+</a>

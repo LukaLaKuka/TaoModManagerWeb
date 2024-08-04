@@ -1,12 +1,20 @@
 ---
 import { langStaticPaths } from "../../../lang";
+import Main from "../../components/blocks/main.astro";
 import Layout from "../../layouts/Layout.astro";
+import getTranslation from "../../modules/getTranslation";
 
 export function getStaticPaths() {
     return langStaticPaths;
 }
 
 let { lang } = Astro.params;
+
+let translation = getTranslation(lang);
 ---
 
-<Layout title="Tao Mod Manager" />
+<Layout title="Tao Mod Manager">
+    <Main lang={translation}>
+
+    </Main>
+</Layout>

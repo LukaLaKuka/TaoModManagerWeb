@@ -1,0 +1,29 @@
+---
+import LinkButton from "../linkButton/linkButton.astro";
+
+interface Props {
+    href: string;
+    version?: string;
+}
+
+const { href, version } = Astro.props;
+---
+
+<div class="flex flex-col gap-1">
+    <LinkButton
+        download
+        href={href}
+        className="px-8 py-4 bg-primary text-light rounded-input font-abz flex justify-center items-center hover:bg-primary-darker transition-all duration-500 gap-3 text-lg"
+    >
+        <slot />
+    </LinkButton>
+    {
+        !version ? (
+            <div />
+        ) : (
+            <div class="flex justify-end items-start">
+                <span class="text-light font-abz">{version}</span>
+            </div>
+        )
+    }
+</div>

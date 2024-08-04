@@ -1,3 +1,5 @@
 export interface translationInterface {
-    termsTitle: string
+    termsTitle: string,
+    mainDescription: string,
+    downloadMessage: string,
 }
