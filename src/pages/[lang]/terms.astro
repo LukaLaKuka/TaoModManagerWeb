@@ -9,7 +9,7 @@ export function getStaticPaths() {
 
 let { lang } = Astro.params;
 
-let t: translationInterface = getTranslation(lang);
+let translation = getTranslation(lang);
 ---
 
-<Layout title={t.termsTitle} />
+<Layout title={'terms'} lang={lang} />

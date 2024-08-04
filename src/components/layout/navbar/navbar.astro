@@ -2,19 +2,20 @@
 import langs from "../../../../lang/langs";
 import SelectLanguage from "../../client/selectLanguage/selectLanguage.svelte";
 
-let { lang } = Astro.params;
+interface Props {
+    lang: string;
+}
 
-if (!lang) lang = "en";
-
+let { lang } = Astro.props;
 ---
 
 <div
     class="bg-darker h-20 md:px-12 ps-2 pe-4 flex justify-between items-center border-b border-light"
 >
-    <div class="h-full flex justify-center items-center">
+    <a href={`/${lang}`} class="h-full flex justify-center items-center">
         <img src="/icon.png" class="h-full" alt="" />
         <h1 class="text-light text-3xl font-yeon">Tao Mod Manager</h1>
-    </div>
+    </a>
     <SelectLanguage
         langsObject={langs}
         selected={lang}
