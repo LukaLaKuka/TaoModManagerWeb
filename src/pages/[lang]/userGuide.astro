@@ -1,11 +1,15 @@
 ---
-import { getLangFromUrl, useTranslations } from "./i18n/utils";
-import Layout from '../layouts/Layout.astro';
+import { langStaticPaths, type translationInterface } from "../../../lang";
+import Layout from "../../layouts/Layout.astro";
+import getTranslation from "../../modules/getTranslation";
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+export function getStaticPaths() {
+    return langStaticPaths;
+}
+
+let { lang } = Astro.params;
+
+let translation = getTranslation(lang);
 ---
 
-<Layout title={t("title")} lang={lang}>
-    <h1>{t("title")}</h1>
-</Layout>
+<Layout title={'terms'} lang={lang} />

@@ -1,0 +1,31 @@
+---
+import type { translationInterface } from "../../../../lang";
+import DownloadButton from "../../server/downloadButton/downloadButton.astro";
+import { DownloadIcon } from "../../icons";
+
+interface Props {
+    lang: translationInterface;
+}
+
+const { lang } = Astro.props;
+---
+
+<div
+    class="w-full grid grid-cols-1 lg:grid-cols-2 px-12 sm:px-24 md:px-48 md:my-24 sm:my-12 my-6"
+>
+    <div class="flex justify-center items-center">
+        <img src="/icon.png" alt="" />
+    </div>
+    <div
+        class="flex flex-col justify-start items-center lg:items-start gap-4 py-8 2xl:pe-48"
+    >
+        <h1 class="text-4xl font-yeon text-light">Tao Mod Manager</h1>
+        <p class="text-light text-xl font-abz mb-8 lg:text-start text-center">
+            {lang.mainDescription}
+        </p>
+        <DownloadButton href="/releases/taomodmanager-v1.0.0-beta.exe" version={`v1.0.0 (${lang.onlyWindows})`}>
+            {lang.downloadMessage}
+            <DownloadIcon/>
+        </DownloadButton>
+    </div>
+</div>

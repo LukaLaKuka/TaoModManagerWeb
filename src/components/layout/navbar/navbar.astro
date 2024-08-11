@@ -12,13 +12,13 @@ let { lang } = Astro.props;
 <div
     class="bg-darker h-20 md:px-12 ps-2 pe-4 flex justify-between items-center border-b border-light"
 >
-    <a href={`/${lang}`} class="h-full flex justify-center items-center">
-        <img src="/icon.png" class="h-full" alt="" />
-        <h1 class="text-light text-3xl font-yeon">Tao Mod Manager</h1>
-    </a>
-    <SelectLanguage
-        langsObject={langs}
-        selected={lang}
-        client:load
-    />
+    <div class="h-full flex justify-start items-center sm:gap-2 md:gap-5 lg:gap-20">
+        <a href={`/${lang}`} class="h-full flex justify-center items-center hover:scale-105 transition-all duration-300">
+            <img src="/icon.png" class="h-full" alt="" />
+            <h1 class="text-light text-3xl font-yeon">Tao Mod Manager</h1>
+        </a>
+        <a href={`/${lang}/userGuide`} class="text-light text-md font-abz hidden sm:block hover:scale-105 transition-all duration-300">Guía de usuario</a>
+        <a href={`/${lang}/terms`} class="text-light text-md font-abz hidden sm:block hover:scale-105 transition-all duration-300">Términos y condiciones</a>
+    </div>
+    <SelectLanguage langsObject={langs} selected={lang} client:load />
 </div>

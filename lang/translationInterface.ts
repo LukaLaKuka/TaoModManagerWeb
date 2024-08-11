@@ -5,5 +5,7 @@ export interface translationInterface {
     onlyWindows: string,
     whatIsTaoModManager: string,
     whatIsTaoModManagerExplanation: string,
+    whyTaoModManager: string,
+    whyTaoModManagerExplanation: string,
     contributorsTitle: string,
 }

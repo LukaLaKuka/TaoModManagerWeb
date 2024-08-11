@@ -63,7 +63,7 @@
 {/if}
 
 <select
-    class="bg-dark p-2 m-2 border-light rounded-button text-light border hidden sm:block"
+    class="p-2 py-3 m-2 bg-primary hover:bg-primary-darker rounded-button text-light hidden sm:block font-abz transition-colors duration-300"
     on:change={redirect}
 >
     {#each langs as [key, value]}

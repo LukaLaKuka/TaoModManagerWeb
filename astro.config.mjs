@@ -8,5 +8,6 @@ export default defineConfig({
   integrations: [svelte(), tailwind()],
   redirects: {
     '/': '/en/'
-  }
+  },
+  output: 'server',
 });
